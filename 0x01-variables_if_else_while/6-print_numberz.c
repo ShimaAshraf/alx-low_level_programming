@@ -10,7 +10,7 @@ int n;
 
 for (n = 0; n <= 9; n++)
 {
-putcha(n + 48);
+putchar(n + 48);
 }
 putchar('\n');
 return (0);
