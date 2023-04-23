@@ -11,7 +11,7 @@ int m;
 
 for (n = 48; n <= 57; n++)
 {
-putchr(n);
+putchar(n);
 }
 putchar(m);
 }
