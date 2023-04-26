@@ -5,7 +5,7 @@
 *
 * @c: the character in ASCII CODE
 *
-* Return: Always 0 (Success)
+* Return: 1 for loercase character. 0 for the rest.
 */
 int _islower(int c)
 {
