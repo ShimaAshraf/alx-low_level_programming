@@ -28,4 +28,4 @@ else if (b == 98)
 printf("%d\n", b);
 }
 }
-} 
+}
