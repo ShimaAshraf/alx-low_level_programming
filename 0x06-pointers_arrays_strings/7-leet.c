@@ -4,7 +4,7 @@
 * leet - Entry point
 * Description: to check if letter is uppercase
 * @str: string
- Return: int
+*Return: int
 */
 char *leet(char *str)
 {
