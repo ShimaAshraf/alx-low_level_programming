@@ -9,19 +9,17 @@
 
 char *_strdup(char *str)
 {
-int i = 0, size = 0;
-char *m;
+char *bbb;
+int i, r = 0;
 if (str == NULL)
 return (NULL);
-for (; str[size] != '\0'; size++)
-/*+1 on the size puts the end of string character*/
-m = malloc(size * sizeof(*str) + 1);
-if (m == 0)
+i = 0;
+while (str[i] != '\0')
+i++;
+bbb = malloc(sizeof(char) * (i + 1));
+if (bbb == NULL)
 return (NULL);
-else
-{
-for (; i < size; i++)
-m[i] == str[i];
-}
-return (m);
+for (r = 0; str[r]; r++)
+bbb[r] = str[r];
+return (bbb);
 }
