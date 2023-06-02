@@ -1,10 +1,16 @@
-#include "lists.h"
+#include<stdio.h>
+
 /**
- * freem- Entry point
- * Description: to check if letter is uppercase
- * Return: int
+ * myStartupFun - Apply the constructor attribute to myStartupFun() so that it
+ *   is executed before main()
  */
-void freem(void)
+void myStartupFun(void) __attribute__ ((constructor));
+
+/**
+ * myStartupFun - implementation of myStartupFun
+ */
+
+void myStartupFun(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
