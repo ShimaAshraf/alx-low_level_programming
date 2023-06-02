@@ -1,53 +1,55 @@
-i#include <stdlib.h>
-#include <string.h>
 #include "lists.h"
-
 /**
- * _strlen - finds the length of a string
- * @str: string to find the length of
- *
- * Return: length of string
+ * _strlen - Entry point
+ * Description: to check if letter is uppercase
+ * @s: string to count its length
+ * Return: no return
  */
-unsigned int _strlen(char *str)
+unsigned int _strlen(char *s)
 {
-unsigned int i;
-for (i = 0; str[i]; i++)
-;
-return (i);
-}
+	unsigned int i;
+	unsigned int len = 0;
 
+	for (i = 0; s[i]; i++)
+		len++;
+	return (len);
+}
 /**
- * add_node_end - adds a new node to the end of linked list
- * @head: double pointer to a linked list
- * @str: string to add to the new node
- *
- * Return: pointer to the new node
+ * add_node_end - Entry point
+ * Description: to check if letter is uppercase
+ * @head: head
+ * @str: string
+ * Return: int
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *new, *tmp;
+	list_t *new = malloc(sizeof(list_t));
+	char *s;
+	unsigned int l;
+	list_t *temp = *head;
 
-if (str == NULL)
-return (NULL);
-new = malloc(sizeof(list_t));
-if (new == NULL)
-return (NULL);
-new->str = strdup(str);
-if (new->str == NULL)
-{
-free(new);
-return (NULL);
-}
-new->len = _strlen(new->str);
-new->next = NULL;
-if (*head == NULL)
-{
-*head = new;
-return (new);
-}
-tmp = *head;
-while (tmp->next)
-tmp = tmp->next;
-tmp->next = new;
-return (new);
+	if (new == NULL || head == NULL)
+		return (NULL);
+	s = strdup(str);
+	if (s == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	new->str = s;
+	l = _strlen(s);
+	new->len = l;
+	new->next = NULL;
+	if (temp == NULL)
+	{
+		*head = new;
+	}
+	else
+	{
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new;
+	}
+	return (new);
+
 }
